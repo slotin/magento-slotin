@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="footer">
+            <referenceBlock name="form.subscribe">
+                <block class="Magento\Framework\View\Element\Text" name="newsletter-cta">
+                    <arguments>
+                        <argument name="text" xsi:type="string">Subscribe to our news!</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
