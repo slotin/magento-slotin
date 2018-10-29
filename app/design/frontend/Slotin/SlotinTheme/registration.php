@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/slotin/slotin-theme',
+    'frontend/Slotin/SlotinTheme',
     __DIR__
 );

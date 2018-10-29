@@ -1,5 +1,5 @@
 {
-    "name": "slotin/slotin-theme",
+    "name": "Slotin/SlotinTheme",
     "description": "Slotin theme",
     "require": {
         "php": "~7.0.13|~7.1.0",
