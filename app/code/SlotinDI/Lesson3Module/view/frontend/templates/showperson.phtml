@@ -1,6 +1,10 @@
 <div class="showperson">
     <h2>Personal info:</h2>
-    <p>Name - <?= $block->getName() ?></p>
-    <p>Last Name - <?= $block->getLastname() ?></p>
-    <a href="<?= $block->getUrl('slotindi_lesson3module/demonstration/indexjson') ?>">Link to JSON controller</a>
+    <?php if ($block->getName()): ?>
+    <p>Name - <?= $block->getName(); ?></p>
+    <?php endif; ?>
+    <?php if ($block->getLastname()): ?>
+    <p>Last Name - <?= $block->getLastname(); ?></p>
+    <?php endif; ?>
+    <a href="<?= $block->getLinkToJson(); ?>">Link to JSON controller</a>
 </div>
