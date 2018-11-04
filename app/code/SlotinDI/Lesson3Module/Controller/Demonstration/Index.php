@@ -11,9 +11,9 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-//        die('ok');
         $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
-        $resultPage->getLayout()
+        $resultPage
+            ->getLayout()
             ->getBlock('show_person')
             ->setName('Dmytro')
             ->setLastname('Slotin')
@@ -22,4 +22,3 @@ class Index extends \Magento\Framework\App\Action\Action
     }
 
 }
-

@@ -1,10 +1,14 @@
 <div class="showperson">
-    <h2>Personal info:</h2>
+    <h2><?= __('Personal info') ?>:</h2>
     <?php if ($block->getName()): ?>
-    <p>Name - <?= $block->getName(); ?></p>
+    <p><?= __('Name') ?> - <?= $block->getName(); ?></p>
     <?php endif; ?>
+
     <?php if ($block->getLastname()): ?>
-    <p>Last Name - <?= $block->getLastname(); ?></p>
+    <p><?= __('Last Name') ?> - <?= $block->getLastname(); ?></p>
     <?php endif; ?>
-    <a href="<?= $block->getLinkToJson(); ?>">Link to JSON controller</a>
+
+    <?php if ($block->getLinkToJson()) : ?>
+    <a href="<?= $block->getLinkToJson(); ?>"><?= __('Link to JSON controller') ?></a>
+    <?php endif; ?>
 </div>

@@ -12,9 +12,4 @@ class ShowPerson extends \Magento\Framework\View\Element\Template
     {
         return $this->getUrl(self::JSON_RESPONSE);
     }
-    public function execute()
-    {
-        $this->_view->renderLayout();
-        $this->_view->loadLayout();
-    }
 }
