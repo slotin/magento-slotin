@@ -4,7 +4,9 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-           <block class="SlotinDI\Lesson3Module\Block\Index" name="lesson3module_index_index" template="SlotinDI_Lesson3Module::index.phtml"></block>
+           <block class="SlotinDI\Lesson3Module\Block\Index"
+                  name="lesson3module_index_index"
+                  template="SlotinDI_Lesson3Module::index.phtml" />
         </referenceContainer>
     </body>
 </page>
