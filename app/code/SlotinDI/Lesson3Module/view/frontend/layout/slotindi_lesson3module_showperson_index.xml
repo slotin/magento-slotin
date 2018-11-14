@@ -6,7 +6,7 @@
         <referenceContainer name="content">
            <block class="SlotinDI\Lesson3Module\Block\Index"
                   name="lesson3module_index_index"
-                  template="SlotinDI_Lesson3Module::index.phtml"></block>
+                  template="SlotinDI_Lesson3Module::index.phtml" />
         </referenceContainer>
     </body>
 </page>
