@@ -1,16 +1,19 @@
 <div class="registartion-for-dealer">
-    <a href="#" id="register-dealer">Registration for dealer</a>
+    <a href="javascript:;"
+       id="register-dealer"
+       data-mage-init='{"dealerPopup": {"config":""}}'>
+        <?= $block->escapeHtml(__('Registration for dealer')); ?>
+    </a>
 </div>
 
 <div id="register-dealer-modal">
-    <div class="wrapper"></div>
 </div>
 
-<script type="text/x-magento-init">
-   {
-        "#register-dealer": {
-            "dealerPopup": {
-            }
-        }
-   }
-</script>
+<!--<script type="text/x-magento-init">-->
+<!--   {-->
+<!--        "#register-dealer": {-->
+<!--            "dealerPopup": {-->
+<!--            }-->
+<!--        }-->
+<!--   }-->
+<!--</script>-->
