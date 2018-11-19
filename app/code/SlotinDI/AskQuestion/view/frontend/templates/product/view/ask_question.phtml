@@ -8,7 +8,7 @@
     <h2><?= $block->escapeHtml(__('Ask question')) ?></h2>
     <div>
         <form class="form request-a-sample"
-              action="#"
+              action="<?= $block->getUrl('ask-question/submit') ?>"
               id="ask-question"
               method="post"
               data-mage-init='{"askQuestionScript":{}}'
@@ -48,7 +48,7 @@
                         />
                     </div>
                 </div>
-                <div class="field telephone">
+                <div class="field telephone required">
                     <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
                     <div class="control">
                         <input name="telephone"
@@ -56,6 +56,7 @@
                                title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>"
                                class="input-text"
                                type="text"
+                               data-validate="{required:true, 'validateUkraineNumber':true}"
                                placeholder="<?= $block->escapeHtml(__('Enter your Number')) ?>"
                         />
                     </div>
@@ -64,7 +65,8 @@
                     <label class="label"
                            for="comment"><span><?= $block->escapeHtml(__('Your question')) ?></span></label>
                     <div class="control">
-                    <textarea name="comment" id="comment"
+                    <textarea name="comment"
+                              id="comment"
                               title="<?= $block->escapeHtmlAttr(__('Your question')) ?>" class="input-text"
                               cols="5" rows="3"
                               data-validate="{required:true}"><?= $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?>

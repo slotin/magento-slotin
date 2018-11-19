@@ -1,7 +1,8 @@
 var config = {
     map: {
         '*': {
-            askQuestionScript: 'SlotinDI_AskQuestion/js/askQuestionScript'
+            askQuestionScript: 'SlotinDI_AskQuestion/js/askQuestionScript',
+            validateUkraineNumber: 'SlotinDI_AskQuestion/js/validate-ukraine-number'
         }
     }
 
