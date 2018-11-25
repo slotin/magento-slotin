@@ -17,13 +17,14 @@ define(
                 }
             }]
         };
-        var popup = modal(options, $('#register-dealer-modal'));
+        var formDealerID = '#register-dealer-form';
+        var popup = modal(options, $(formDealerID));
         $("#register-dealer").on('click', function (e) {
             e.preventDefault();
-            $("#register-dealer-modal").modal("openModal");
+            $(formDealerID).modal("openModal");
+            $(formDealerID).trigger('contentUpdated');
 
-            $('#form-validate').clone().appendTo('#register-dealer-modal'); // just for copy form (for creating unique form maybe need new template)
-
+            // $('#form-validate').clone().appendTo('#register-dealer-modal'); // just for copy form (for creating unique form maybe need new template)
 
         });
     };
