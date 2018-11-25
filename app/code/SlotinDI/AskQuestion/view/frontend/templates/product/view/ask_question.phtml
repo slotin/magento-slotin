@@ -11,7 +11,7 @@
               action="<?= $block->getUrl('ask-question/submit') ?>"
               id="ask-question"
               method="post"
-              data-mage-init='{"askQuestionScript":{}}'
+              data-mage-init='{"validation":{}, "askQuestionScript":{}}'
               onsubmit="return false;"
         >
             <fieldset class="fieldset">
@@ -57,7 +57,7 @@
                                class="input-text"
                                type="text"
                                data-validate="{required:true, 'validateUkraineNumber':true}"
-                               placeholder="<?= $block->escapeHtml(__('Enter your Number')) ?>"
+                               placeholder="<?= $block->escapeHtml(__('Enter the number in the format +380XXXXXXXXX')) ?>"
                         />
                     </div>
                 </div>

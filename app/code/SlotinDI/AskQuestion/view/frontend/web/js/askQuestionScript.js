@@ -52,14 +52,14 @@ define(
                         .fail(function (error) {
                             console.log(JSON.stringify(error));
                             alert({
-                                title: 'Error',
-                                content: 'Your request can not be submitted. Please, contact us directly via email or prone to get your Sample.'
+                                title: $.mage.__('Error'),
+                                content: $.mage.__('Your question can not be send. Please, contact us directly via email or phone.')
                             });
                         });
                 } else {
                     alert({
-                        title: 'Error',
-                            content: 'Are you bot?! Relax your fingers for 2 minutes'
+                        title: $.mage.__('Error'),
+                        content: $.mage.__('Are you bot?! Relax your fingers for 2 minutes')
                     });
                 }
             },
