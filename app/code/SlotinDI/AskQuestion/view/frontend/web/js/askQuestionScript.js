@@ -5,7 +5,7 @@ define(
         'mage/translate',
         'mage/cookies',
         'jquery/ui',
-        'SlotinDI_AskQuestion/js/validate-ukraine-number'
+        'SlotinDI_AskQuestion/js/validateUkraineNumber'
     ], function ($, alert) {
         'use strict';
 
@@ -24,6 +24,11 @@ define(
              *
              */
             submitForm: function () {
+                debugger;
+                if (!this.validateForm()) {
+                    //console.log('Form was not submitted');
+                    return;
+                }
                 var cookieSent = $.mage.cookies.get("askMessage");
                 // console.log(cookieSent);
                 var formData = new FormData($(this.element).get(0));
