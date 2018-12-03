@@ -144,6 +144,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistSampleData' => 1,
         'SlotinDI_Lesson3Module' => 1,
+        'SlotinDI_Lesson5' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]
