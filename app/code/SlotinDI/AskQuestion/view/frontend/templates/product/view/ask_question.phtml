@@ -9,9 +9,9 @@
     <div>
         <form class="form request-a-sample"
               action="<?= $block->getUrl('ask-question/submit') ?>"
-              id="ask-question"
+              id="ask-question-form"
               method="post"
-              data-mage-init='{"validation":{}}'
+              data-mage-init='{"askQuestionScript":{}}'
               onsubmit="return false;"
         >
             <fieldset class="fieldset">
@@ -60,7 +60,7 @@
                                    required:true,
                                    'minlength':13,
                                    'maxlength':13,
-                                   'phoneUA': true
+                                   'validatePhoneUA': true
                                    }"
                                placeholder="<?= $block->escapeHtml(__('Enter the number in the format +380XXXXXXXXX')) ?>"
                         />

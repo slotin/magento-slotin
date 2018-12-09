@@ -36,10 +36,18 @@ class Index extends \Magento\Framework\App\Action\Action
             // @TODO: #111 Backend form validation
             // Here we must also process backend validation or all form fields.
             // Otherwise attackers can just copy our page, remove fields validation and send anything they want
-            $data = [
-                'status' => self::STATUS_SUCCESS,
-                'message' => __('Your request was submitted. We\'ll get in touch with you as soon as possible.')
-            ];
+
+            if ($request->getParam('askMessage') == '1') {
+                $data = [
+                    'status' => self::STATUS_ERROR,
+                    'message' => 'Your request cannot be submitted.'
+                ];
+            } else {
+                $data = [
+                    'status' => self::STATUS_SUCCESS,
+                    'message' => 'Your request was submitted.'
+                ];
+            }
         } catch (LocalizedException $e) {
             $data = [
                 'status'  => self::STATUS_ERROR,
