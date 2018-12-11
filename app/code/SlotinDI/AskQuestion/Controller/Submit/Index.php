@@ -32,12 +32,7 @@ class Index extends \Magento\Framework\App\Action\Action
         try {
             if (!$this->formKeyValidator->validate($request) || $request->getParam('hideit')) {
                 throw new LocalizedException(__('Something went wrong. Probably you were away for quite a long time already. Please, reload the page and try again.'));
-            }
-            // @TODO: #111 Backend form validation
-            // Here we must also process backend validation or all form fields.
-            // Otherwise attackers can just copy our page, remove fields validation and send anything they want
-
-            if ($request->getParam('askMessage') == '1') {
+            }            if ($request->getParam('askMessage') == '1') {
                 $data = [
                     'status' => self::STATUS_ERROR,
                     'message' => 'Your request cannot be submitted.'

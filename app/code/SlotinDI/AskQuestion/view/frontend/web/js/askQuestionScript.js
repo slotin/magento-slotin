@@ -26,7 +26,7 @@ define(
                 if ($.mage.cookies.get(this.options.cookieName)) {
                     alert({
                         title: $.mage.__('Error'),
-                        content: $.mage.__('Are you bot?! Relax your fingers for 2 minutes')
+                        content: $.mage.__('Many questions! Try to send question after 2 minutes.')
                     });
 
                     return;
@@ -43,12 +43,9 @@ define(
              * Ajax submit form
              */
             ajaxSubmit: function () {
-                // debugger;
                 var formData = new FormData($(this.element).get(0));
-                // var cookieSent = $.mage.cookies.get("askMessage");
                 formData.append('form_key', $.mage.cookies.get('form_key'));
                 formData.append('askMessage', $.mage.cookies.get(this.options.cookieName));
-                // console.log(cookieSent);
                 var self = this;
 
                 $.ajax({
@@ -59,7 +56,6 @@ define(
                     type: 'post',
                     dataType: 'json',
                     context: this,
-
                     success: function (response) {
                         alert({
                             title: $.mage.__(response.status),
@@ -68,16 +64,14 @@ define(
 
                         if (response.status === 'Success') {
                             var date = new Date();
-                            console.log(date);
-                            date.setTime(date.getTime() +  2 * 60 * 1000);
-                            $.mage.cookies.set(self.options.cookieName, 1, {expires: date});
-                            // var CookieText = "askMessage=true; path=/; expires=" + date.toUTCString();
-                            // console.log(CookieText);
+                            var cookieTime = new Date(date.getTime() +  2 * 60 * 1000);
+                            $.mage.cookies.set(self.options.cookieName, 1, {expires: cookieTime});
+                            /** old method to set cookie */
+                            // var CookieText = "askMessage=1; path=/; expires=" + cookieTime.toUTCString();
                             // document.cookie = CookieText;
                         }
                     },
                     error: function () {
-                        // console.log(JSON.stringify(error));
                         alert({
                             title: $.mage.__('Error'),
                             content: $.mage.__('Your question can not be send. Please, contact us directly via email or phone.')
