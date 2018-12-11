@@ -143,6 +143,7 @@ return [
         'Dotdigitalgroup_Email' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistSampleData' => 1,
+        'SlotinDI_AskQuestion' => 1,
         'SlotinDI_Lesson3Module' => 1,
         'SlotinDI_Lesson5' => 1,
         'Temando_Shipping' => 1,
