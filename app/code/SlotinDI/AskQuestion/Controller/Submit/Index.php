@@ -32,12 +32,8 @@ class Index extends \Magento\Framework\App\Action\Action
         try {
             if (!$this->formKeyValidator->validate($request) || $request->getParam('hideit')) {
                 throw new LocalizedException(__('Something went wrong. Probably you were away for quite a long time already. Please, reload the page and try again.'));
-            }            if ($request->getParam('askMessage') == '1') {
-                $data = [
-                    'status' => self::STATUS_ERROR,
-                    'message' => 'Your request cannot be submitted.'
-                ];
-            } else {
+            }
+            {
                 $data = [
                     'status' => self::STATUS_SUCCESS,
                     'message' => 'Your request was submitted.'

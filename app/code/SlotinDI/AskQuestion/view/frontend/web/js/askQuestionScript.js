@@ -46,38 +46,35 @@ define(
                 var formData = new FormData($(this.element).get(0));
                 formData.append('form_key', $.mage.cookies.get('form_key'));
                 formData.append('askMessage', $.mage.cookies.get(this.options.cookieName));
+                var cookieSend = $.mage.cookies.get('askMessage');
                 var self = this;
+                if (!cookieSend) {
+                    $.ajax({
+                        url: $(this.element).attr('action'),
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        type: 'post',
+                        dataType: 'json',
+                        context: this,
+                        success: function (response) {
+                            alert({
+                                title: $.mage.__(response.status),
+                                content: $.mage.__(response.message)
+                            });
 
-                $.ajax({
-                    url: $(this.element).attr('action'),
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    type: 'post',
-                    dataType: 'json',
-                    context: this,
-                    success: function (response) {
-                        alert({
-                            title: $.mage.__(response.status),
-                            content: $.mage.__(response.message)
-                        });
-
-                        if (response.status === 'Success') {
-                            var date = new Date();
-                            var cookieTime = new Date(date.getTime() +  2 * 60 * 1000);
-                            $.mage.cookies.set(self.options.cookieName, 1, {expires: cookieTime});
-                            /** old method to set cookie */
-                            // var CookieText = "askMessage=1; path=/; expires=" + cookieTime.toUTCString();
-                            // document.cookie = CookieText;
+                            if (response.status === 'Success') {
+                                $.mage.cookies.set(self.options.cookieName, 1, {lifetime: 120});
+                            }
+                        },
+                        error: function () {
+                            alert({
+                                title: $.mage.__('Error'),
+                                content: $.mage.__('Your question can not be send. Please, contact us directly via email or phone.')
+                            });
                         }
-                    },
-                    error: function () {
-                        alert({
-                            title: $.mage.__('Error'),
-                            content: $.mage.__('Your question can not be send. Please, contact us directly via email or phone.')
-                        });
-                    }
-                });
+                    });
+                }
             },
         });
         return $.slotindi.askquestion;
