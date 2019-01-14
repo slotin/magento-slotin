@@ -8,7 +8,7 @@
             <parameter name="title" xsi:type="text" required="true" visible="true">
                 <label translate="true">Title for button</label>
             </parameter>
-            <parameter name="block_id" xsi:type="block" visible="true" required="true" sort_order="20">
+            <parameter name="block_id2" xsi:type="block" visible="true" required="true" sort_order="20">
                 <label translate="true">Block</label>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
                     <data>
